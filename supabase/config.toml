@@ -1,0 +1,8 @@
+# The payment gateway calls payment-callback directly (no Supabase login), and guests
+# can pay without an account, so neither function requires a user JWT. Each one does
+# its own checks: order number + phone for init, gateway validation for the callback.
+[functions.payment-init]
+verify_jwt = false
+
+[functions.payment-callback]
+verify_jwt = false

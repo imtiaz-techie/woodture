@@ -1,0 +1,13 @@
+node_modules
+dist
+*.log
+
+# secrets — never commit
+.secrets/
+.env
+.env.*
+!.env.example
+
+# tool state
+.vercel
+supabase/.temp

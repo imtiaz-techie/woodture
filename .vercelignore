@@ -1,0 +1,8 @@
+.secrets
+.env
+.env.*
+node_modules
+dist
+supabase/.temp
+*.log
+

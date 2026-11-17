@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-ivory font-sans text-espresso antialiased; }
+  h1, h2, h3 { @apply font-display; text-wrap: balance; }
+  ::selection { background: #B58A58; color: #fff; }
+  :focus-visible { outline: 2px solid #9B6339; outline-offset: 2px; }
+  input[type='number']::-webkit-inner-spin-button { opacity: 0.4; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12; }
+  .eyebrow { @apply text-[11px] font-medium uppercase tracking-luxe text-wood; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-7 py-3.5 text-[13px] font-medium
+      uppercase tracking-[0.14em] transition duration-300 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-walnut text-ivory hover:bg-espresso; }
+  .btn-outline { @apply btn border border-walnut/30 text-walnut hover:border-walnut hover:bg-walnut hover:text-ivory; }
+  .btn-light { @apply btn bg-ivory text-walnut hover:bg-white; }
+  .btn-sm { @apply px-5 py-2.5 text-[12px]; }
+  .input {
+    @apply w-full rounded-lg border border-walnut/15 bg-white px-4 py-3 text-sm text-espresso placeholder:text-espresso/35
+      transition focus:border-wood focus:outline-none focus:ring-2 focus:ring-wood/15 disabled:bg-cream/50;
+  }
+  .label { @apply mb-1.5 block text-[12px] font-medium uppercase tracking-wider text-espresso/60; }
+  .card { @apply rounded-2xl border border-walnut/10 bg-white; }
+  .link-underline { @apply relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full; }
+  .prose-wt p { @apply mb-4 leading-relaxed text-espresso/75; }
+  .prose-wt h2 { @apply mb-3 mt-10 text-2xl text-walnut; }
+  .prose-wt ul { @apply mb-4 list-disc space-y-1.5 pl-5 text-espresso/75; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+}
